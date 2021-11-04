@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var spd = 200 #скорость
+export var drag = 0.8 #коэффициент трения
 
 var velocity = Vector2(0,0) #вектор движения
 var can_control = true #может ли игрок контроллировать персонажа
@@ -21,6 +22,14 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		stun(1)
+	
+	velocity*=drag
+
+
+
+func _physics_process(delta):
+	move_and_slide(velocity + input*spd)
+
 
 func stun(duration:float):
 	velocity = Vector2.ZERO
@@ -30,9 +39,8 @@ func stun(duration:float):
 	var new_label = preload("res://stun_label.tscn").instance()
 	add_child(new_label)
 
-func _physics_process(delta):
-	move_and_slide(velocity + input*spd)
-
+func impulse(direction, force):
+	velocity += Vector2(cos(direction), sin(direction)) * force
 
 
 """

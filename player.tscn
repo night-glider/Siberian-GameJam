@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://gun.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -30,5 +31,8 @@ shape = SubResource( 2 )
 
 [node name="stun_timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="gun" parent="." instance=ExtResource( 3 )]
+radius = 50
 
 [connection signal="timeout" from="stun_timer" to="." method="_on_stun_timer_timeout"]
