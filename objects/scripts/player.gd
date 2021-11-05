@@ -37,7 +37,7 @@ func stun(duration:float):
 	can_control = false
 	$stun_timer.wait_time = duration
 	$stun_timer.start()
-	var new_label = preload("res://stun_label.tscn").instance()
+	var new_label = preload("res://objects/stun_label.tscn").instance()
 	add_child(new_label)
 
 func impulse(direction, force):

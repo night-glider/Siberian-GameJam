@@ -19,6 +19,6 @@ func change_scene(scene_name:String, id:int):
 	if temp_file.file_exists("res://savedata/" + scene_name + ".tscn"):
 		get_tree().change_scene("res://savedata/"+ scene_name+".tscn")
 	else:
-		get_tree().change_scene("res://"+scene_name+".tscn")
+		get_tree().change_scene("res://locations/"+scene_name+".tscn")
 	print("4")
 	

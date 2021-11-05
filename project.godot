@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "location",
 "language": "GDScript",
-"path": "res://location.gd"
+"path": "res://custom_nodes/location.gd"
 } ]
 _global_script_class_icons={
 "location": ""
@@ -22,12 +22,12 @@ _global_script_class_icons={
 
 config/name="SibGameJam"
 run/main_scene="res://MainWindowReal.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/icon.png"
 
 [autoload]
 
-SceneChanger="*res://scene_changer.gd"
-MusicController="*res://MusicController.tscn"
+SceneChanger="*res://autoload/scene_changer.gd"
+MusicController="*res://autoload/MusicController.tscn"
 
 [input]
 

@@ -12,5 +12,5 @@ func _init():
 func _ready():
 	var music_node = get_node("/root/MusicController") # Music node
 	music_node = music_node.get_node("AmbietMusic") 
-	music_node.stream = preload("res://HomeMenu.mp3") # Music setter
+	music_node.stream = preload("res://audio/HomeMenu.mp3") # Music setter
 	music_node.playing = true
