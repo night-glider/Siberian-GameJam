@@ -4,7 +4,7 @@ var player = null
 var spawnpoint = 0
 
 func change_scene(scene_name:String, id:int):
-	print_debug("test")
+	print_debug("Changed scene to " + scene_name + "\n with spawnpoint_id " + str(id))
 	
 	player = get_tree().current_scene.get_node("player")
 	spawnpoint = id
