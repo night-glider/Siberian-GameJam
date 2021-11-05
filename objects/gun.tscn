@@ -5,6 +5,11 @@
 
 [node name="gun" type="Node2D"]
 script = ExtResource( 2 )
+gun_name = "Пистолет"
+description = "Самый обычный пистолет.
+Урон: 1
+[color=green]50% шанс нанести двойной урон. [/color]
+[color=red]0.01% шанс получить оглушение во время стрельбы. [/color]"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

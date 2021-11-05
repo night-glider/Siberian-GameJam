@@ -12,8 +12,10 @@ margin_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
-bbcode_text = "[center][wave amp=50 freq=10]STUN![/wave][/center]"
-text = "STUN!"
+bbcode_text = "[center][wave amp=50 freq=10]
+ОГЛУШЕН![/wave][/center]"
+text = "
+ОГЛУШЕН!"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false

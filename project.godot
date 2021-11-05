@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
+"base": "YSort",
 "class": "location",
 "language": "GDScript",
 "path": "res://custom_nodes/location.gd"
@@ -28,6 +28,14 @@ config/icon="res://sprites/icon.png"
 
 MusicController="*res://autoload/MusicController.tscn"
 SceneChanger="*res://autoload/scene_changer.gd"
+
+[global]
+
+font=false
+
+[gui]
+
+theme/custom_font="res://default_font.tres"
 
 [input]
 
