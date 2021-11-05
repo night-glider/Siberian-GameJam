@@ -8,63 +8,16 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "YSort",
-"class": "location",
-"language": "GDScript",
-"path": "res://custom_nodes/location.gd"
-} ]
-_global_script_class_icons={
-"location": ""
-}
-
 [application]
 
-config/name="SibGameJam"
-run/main_scene="res://scenes/MainWindowReal.tscn"
-config/icon="res://sprites/icon.png"
+config/name="IJustWhatToReadMyNewspapers!"
+run/main_scene="res://src/scenes/MainScene.tscn"
+config/icon="res://icon.png"
 
-[autoload]
+[display]
 
-MusicController="*res://autoload/MusicController.tscn"
-SceneChanger="*res://autoload/scene_changer.gd"
-Globals="*res://autoload/globals.gd"
-
-[global]
-
-font=false
-
-[gui]
-
-theme/custom_font="res://default_font.tres"
-
-[input]
-
-walk_left={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
- ]
-}
-walk_right={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
- ]
-}
-walk_up={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
- ]
-}
-walk_down={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
- ]
-}
-shoot={
-"deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
- ]
-}
+window/size/resizable=false
+window/size/always_on_top=true
 
 [physics]
 

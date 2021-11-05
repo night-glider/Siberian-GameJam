@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scrpts/MainScene.gd" type="Script" id=1]
+[ext_resource path="res://src/Fonts/h1_alagard.tres" type="DynamicFont" id=2]
+
+[node name="Menu" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Intro" type="Control" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="Menu" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 60
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 60
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+margin_left = 120.0
+margin_top = 60.0
+margin_right = 904.0
+margin_bottom = 540.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/HBoxContainer"]
+margin_right = 784.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameTitle" type="Label" parent="Menu/HBoxContainer/VBoxContainer"]
+margin_top = 115.0
+margin_right = 784.0
+margin_bottom = 292.0
+custom_fonts/font = ExtResource( 2 )
+text = "I Just what
+to read my
+Newspaper!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/HBoxContainer/VBoxContainer"]
+margin_top = 296.0
+margin_right = 784.0
+margin_bottom = 364.0
+
+[node name="Start" type="Button" parent="Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 0
+
+[node name="Settings" type="Button" parent="Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 300.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 0
+
+[node name="Exit" type="Button" parent="Menu/HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 300.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 0
+
+[node name="Settings" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
