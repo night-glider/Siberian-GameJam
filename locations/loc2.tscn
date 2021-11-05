@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tilesets/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/loc_change_trigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://cloud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://custom_nodes/location.gd" type="Script" id=4]
 [ext_resource path="res://tilesets/paths.tres" type="TileSet" id=5]
+[ext_resource path="res://tilesets/decorations.tres" type="TileSet" id=6]
 
 [node name="loc2" type="YSort"]
 script = ExtResource( 4 )
@@ -32,3 +33,13 @@ format = 1
 
 [node name="Node2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 201.901, 318.728 )
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+cell_tile_origin = 2
+cell_y_sort = true
+show_collision = true
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( 65550, 0, 0, 65558, 0, 0, 262169, 1, 0, 393237, 1, 0, 524306, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 655383, 1, 0, 851991, 0, 0 )
