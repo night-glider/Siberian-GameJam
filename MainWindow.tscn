@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://exif.gd" type="Script" id=2]
+[ext_resource path="res://btn_start.gd" type="Script" id=1]
+[ext_resource path="res://btn_exit.gd" type="Script" id=2]
 
 [node name="MainWindow" type="MarginContainer"]
 anchor_right = 1.0
@@ -54,6 +55,7 @@ margin_right = 200.0
 margin_bottom = 151.0
 rect_pivot_offset = Vector2( -327.046, 67.7588 )
 text = "Start"
+script = ExtResource( 1 )
 
 [node name="Options" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 161.0
