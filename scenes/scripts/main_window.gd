@@ -1,11 +1,26 @@
 extends MarginContainer
 
 func _ready():
-	var music_node = get_node("/root/MusicController") # Music node
-	music_node = music_node.get_node("AmbietMusic") 
+	# Music node
+	var music_node = get_node("/root/MusicController").get_node("AmbietMusic")  # Music node
 	music_node.stream = preload("res://audio/HomeMenu.mp3") # Music setter
-	music_node.playing = true
-
+	
+	# Settings window node
+	var settingsBar = get_node("Settings/VBoxContainer3/HBoxContainer/VBoxContainer2/MusicScrollBar")
+	
+	# Openned config file parser
+	var file = File.new()
+	file.open("res://savedata/configs.json", file.READ) # The default JSON file should be gitignored
+	var json = file.get_as_text()
+	var configs = JSON.parse(json).result
+	file.close()
+	
+	# Setting configs from configs.json
+	settingsBar.value = float(configs["music"])
+	music_node.volume_db = float(configs["music"]) - 100
+	
+	
+	
 func _on_Start_pressed():
 	print_debug("Game started")
 	var music_node = get_node("/root/MusicController").get_node("AmbietMusic") # Getting Music Node
@@ -24,8 +39,10 @@ func _on_Options_pressed():
 	setting.visible = true
 
 func _on_MusicScrollBar_value_changed(value):
+	# Changed Music scrollbar
 	var ambientMusic = get_node("/root/MusicController").get_node("AmbietMusic")
 	ambientMusic.volume_db = -80 + value
+	
 
 func _on_MainWindow_ready():
 	var main = get_node("Menu")
@@ -34,7 +51,22 @@ func _on_MainWindow_ready():
 	settings.visible = false
 
 func _on_SettingExitBtn_pressed():
+	# Changing visibility of some windows
 	var setting = get_node("Settings")
 	var mainWindow = get_node("Menu")
 	setting.visible = false
 	mainWindow.visible = true
+	
+	# Saving data 
+	var data = {	}
+	
+	data["music"] = get_node("Settings/VBoxContainer3/HBoxContainer/VBoxContainer2/MusicScrollBar").value
+	
+	print_debug(data["music"])
+	
+	var file = File.new()
+	file.open("res://savedata/configs.json", file.WRITE)
+	file.store_var(to_json(data), true)
+	file.close()
+	
+	print_debug("Saved settings data")
