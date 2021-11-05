@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://exif.gd" type="Script" id=2]
+
+[node name="MainWindow" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.858093
+margin_top = 1.28722
+margin_right = -0.858093
+margin_bottom = 1.28723
+custom_constants/margin_right = 60
+custom_constants/margin_top = 120
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 120
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 60.0
+margin_top = 120.0
+margin_right = 964.0
+margin_bottom = 480.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 904.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 904.0
+margin_bottom = 14.0
+text = "Hello World"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 200.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 342.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
+alignment = 1
+
+[node name="Start" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 131.0
+margin_right = 200.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( -327.046, 67.7588 )
+text = "Start"
+
+[node name="Options" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 161.0
+margin_right = 200.0
+margin_bottom = 181.0
+rect_pivot_offset = Vector2( -327.046, 67.7588 )
+text = "Options"
+
+[node name="Exit" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 191.0
+margin_right = 200.0
+margin_bottom = 211.0
+rect_pivot_offset = Vector2( -327.046, 67.7588 )
+text = "Exit"
+script = ExtResource( 2 )

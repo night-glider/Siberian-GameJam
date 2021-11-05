@@ -11,11 +11,13 @@ config_version=4
 [application]
 
 config/name="SibGameJam"
+run/main_scene="res://MainWindowReal.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 SceneChanger="*res://scene_changer.gd"
+MusicController="*res://MusicController.tscn"
 
 [input]
 
