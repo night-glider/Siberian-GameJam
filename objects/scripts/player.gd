@@ -10,6 +10,10 @@ var input = Vector2(0,0) #то, куда игрок ХОЧЕТ пойти
 var current_gun
 
 func _ready():
+	$Camera2D.limit_left = get_parent().bounding_box.position.x
+	$Camera2D.limit_right = get_parent().bounding_box.end.x
+	$Camera2D.limit_top = get_parent().bounding_box.position.y
+	$Camera2D.limit_bottom = get_parent().bounding_box.end.y
 	current_gun = $gun
 	
 	$GUI.names.append($gun.gun_name)
@@ -22,6 +26,9 @@ func _ready():
 	$GUI/inventory/list.clear()
 	for elem in $GUI.names:
 		$GUI/inventory/list.add_item(elem)
+	
+	for i in $GUI/inventory/list.get_item_count():
+		$GUI/inventory/list.set_item_tooltip_enabled(i, false)
 
 func _process(delta):
 	input = Vector2.ZERO
@@ -40,7 +47,7 @@ func _process(delta):
 		
 		if Input.is_action_pressed("shoot"):
 			current_gun.shoot()
-			
+		
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		stun(1)
@@ -63,6 +70,8 @@ func _process(delta):
 func _physics_process(delta):
 	move_and_slide(velocity + input*spd)
 
+func take_hit(damage):
+	pass
 
 func stun(duration:float):
 	velocity = Vector2.ZERO
@@ -79,7 +88,6 @@ func impulse(direction, force):
 """
 Сигналы
 """
-
 
 func _on_stun_timer_timeout():
 	can_control = true

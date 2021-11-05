@@ -1,6 +1,8 @@
 extends YSort
 class_name location
 
+export(Rect2) var bounding_box
+
 func _ready():
 	var check = File.new() 
 	var player_res
