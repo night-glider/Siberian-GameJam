@@ -5,4 +5,7 @@ export(int) var spawn_point_id = 0
 
 
 func _on_loc_change_trigger_body_entered(body):
-	SceneChanger.change_scene(location_name, spawn_point_id)
+	if body.name == "player":
+		print("hey")
+		SceneChanger.change_scene(location_name, spawn_point_id)
+		

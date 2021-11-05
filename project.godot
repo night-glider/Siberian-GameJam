@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "location",
+"language": "GDScript",
+"path": "res://location.gd"
+} ]
+_global_script_class_icons={
+"location": ""
+}
+
 [application]
 
 config/name="SibGameJam"
