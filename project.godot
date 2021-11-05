@@ -21,13 +21,13 @@ _global_script_class_icons={
 [application]
 
 config/name="SibGameJam"
-run/main_scene="res://MainWindowReal.tscn"
+run/main_scene="res://scenes/MainWindowReal.tscn"
 config/icon="res://sprites/icon.png"
 
 [autoload]
 
-SceneChanger="*res://autoload/scene_changer.gd"
 MusicController="*res://autoload/MusicController.tscn"
+SceneChanger="*res://autoload/scene_changer.gd"
 
 [input]
 
