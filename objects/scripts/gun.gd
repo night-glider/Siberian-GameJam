@@ -39,6 +39,10 @@ func shoot():
 		get_tree().current_scene.add_child(new_proj)
 		new_proj.global_position = $shoot_here.global_position
 		new_proj.velocity = Vector2(projectile_speed, 0).rotated(rotation)
+		new_proj.damage = 1
+		chance = randf()
+		if chance < 0.1:
+			new_proj.damage*=2
 
 func _on_cooldown_timeout():
 	can_shoot = true

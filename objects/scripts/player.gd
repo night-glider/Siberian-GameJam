@@ -70,8 +70,8 @@ func _process(delta):
 func _physics_process(delta):
 	move_and_slide(velocity + input*spd)
 
-func take_hit(damage):
-	pass
+func take_hit(damage:int):
+	Globals.damage_indicator(global_position, damage)
 
 func stun(duration:float):
 	velocity = Vector2.ZERO

@@ -28,6 +28,7 @@ config/icon="res://sprites/icon.png"
 
 MusicController="*res://autoload/MusicController.tscn"
 SceneChanger="*res://autoload/scene_changer.gd"
+Globals="*res://autoload/globals.gd"
 
 [global]
 
