@@ -25,6 +25,17 @@ func _process(delta):
 		print("im alive")
 	
 	velocity*=drag
+	
+	if( (velocity + input * spd).length() < 1):
+		$AnimatedSprite.animation = "idle"
+	else:
+		$AnimatedSprite.animation = "walk"
+	
+	if( global_position.x - get_global_mouse_position().x < 0 ):
+		$AnimatedSprite.flip_h = false
+	
+	if( global_position.x - get_global_mouse_position().x > 0 ):
+		$AnimatedSprite.flip_h = true
 
 
 

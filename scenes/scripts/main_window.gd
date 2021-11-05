@@ -11,6 +11,7 @@ func _on_Start_pressed():
 	var music_node = get_node("/root/MusicController").get_node("AmbietMusic") # Getting Music Node
 	music_node.volume_db = lerp(int(music_node.volume_db), -80, 0.3) # Music volume decrease
 	# Change Scene script
+	get_tree().change_scene("res://locations/loc_home.tscn")
 
 func _on_Exit_pressed():
 	print_debug("Bye!")
