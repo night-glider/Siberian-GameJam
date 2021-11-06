@@ -30,12 +30,6 @@ MusicController="*res://autoload/MusicController.tscn"
 SceneChanger="*res://autoload/scene_changer.gd"
 Globals="*res://autoload/globals.gd"
 
-[display]
-
-window/size/width=1200
-window/size/height=920
-window/size/always_on_top=true
-
 [global]
 
 font=false
