@@ -64,7 +64,16 @@ func _process(delta):
 	
 	if( global_position.x - get_global_mouse_position().x > 0 ):
 		$AnimatedSprite.flip_h = true
-
+	
+	
+	if Input.is_action_just_pressed("delete_save"):
+		var dir = Directory.new()
+		dir.open("user://")
+		dir.list_dir_begin()
+		var file = dir.get_next()
+		while file != "":
+			dir.remove(file)
+			file = dir.get_next()
 
 
 func _physics_process(delta):

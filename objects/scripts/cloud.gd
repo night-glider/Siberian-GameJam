@@ -24,7 +24,9 @@ func take_hit(damage):
 	Globals.damage_indicator(position, damage)
 	hp-=damage
 	if hp <= 0:
+		Globals.coin_spawn(position, 100, 10)
 		queue_free()
+	
 
 
 

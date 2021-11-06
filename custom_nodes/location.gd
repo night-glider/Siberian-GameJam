@@ -6,8 +6,8 @@ export(Rect2) var bounding_box
 func _ready():
 	var check = File.new() 
 	var player_res
-	if check.file_exists("res://savedata/player.tscn"):
-		player_res = load("res://savedata/player.tscn")
+	if check.file_exists("user://player.tscn"):
+		player_res = load("user://player.tscn")
 	else:
 		player_res = load("res://objects/player.tscn")
 	var player = player_res.instance()

@@ -16,8 +16,8 @@ func _ready():
 	file.close()
 	
 	# Setting configs from configs.json
-	settingsBar.value = float(configs["music"])
-	music_node.volume_db = float(configs["music"]) - 100
+	#settingsBar.value = float(configs["music"])
+	#music_node.volume_db = float(configs["music"]) - 100
 	
 	
 	
