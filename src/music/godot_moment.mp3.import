@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/godot_moment.mp3-223e99797939b60653801045d39ecbb8.mp3str"
+
+[deps]
+
+source_file="res://src/music/godot_moment.mp3"
+dest_files=[ "res://.import/godot_moment.mp3-223e99797939b60653801045d39ecbb8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

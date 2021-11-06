@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SibGameJam"
-run/main_scene="res://scenes/MainWindowReal.tscn"
+run/main_scene="res://scenes/MainScene.tscn"
 config/icon="res://sprites/icon.png"
 
 [autoload]
@@ -29,6 +29,13 @@ config/icon="res://sprites/icon.png"
 MusicController="*res://autoload/MusicController.tscn"
 SceneChanger="*res://autoload/scene_changer.gd"
 Globals="*res://autoload/globals.gd"
+
+[display]
+
+window/size/width=1200
+window/size/height=920
+window/size/resizable=false
+window/size/always_on_top=true
 
 [global]
 

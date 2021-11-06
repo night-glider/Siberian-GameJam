@@ -1,0 +1,13 @@
+{
+    "sounds": {
+        "music": 75,
+        "ambientSounds": 75,
+        "sounds": 75,
+        "summary": 75
+    },
+    "graphics": {
+        "resolution": 1
+    },
+    "lang": "eng",
+    "enableDevMode": true
+}
