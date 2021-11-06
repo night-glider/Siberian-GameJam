@@ -1,5 +1,11 @@
 extends MarginContainer
 
+# var Config = File.new()
+# var Json = Config.open("res://src/configs/cfg.json", File.READ_WRITE)
+# var JsonData = Config.get_as_text()
+# var JsonConfig = JSON.parse(JsonData).result
+
+
 # Exit func
 func _on_Exit_pressed(): get_tree().quit() 
 
@@ -23,6 +29,8 @@ func _on_Start_pressed():
 	var MusicNode = get_node("/root/MusicController").get_node("Music-stream")
 	var Overlay = get_node("ColorOverlay")
 	Overlay.visible = false
+	MusicNode.playing = false
+	get_tree().change_scene("res://src/scenes/ActOne.tscn")
 	
 	# Changing sceen
 	#var count = 3
@@ -56,6 +64,9 @@ func _on_DevModeBox_toggled(button_pressed):
 		get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer2/DevMode-Box").text = "Developer mode"
 		get_node("Background").visible = false
 
+# MusicVolume Saver
+func _on_MusicVolumeSlider_value_changed(value):
+	pass # Replace with function body.
 
 # Set default values  
 func _ready():
@@ -66,10 +77,14 @@ func _ready():
 	Menu.visible = true
 	Settings.visible = false
 	
+	# print_debug(JsonData)
+	# var data = JsonData
+	#get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer/MusicControl/MusicVolume-Slider").value = int((data["sounds"])["music"])
+	#get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer/SoundsControl/SoundsVolume-Slider").value = int((JsonData["sounds"])["sounds"])
+	
 	# Setting default music
 	var MusicNode = get_node("/root/MusicController").get_node("Music-stream")
 	MusicNode.stream = preload("res://src/music/MenuMusic.mp3")
 	MusicNode.playing = true
 	MusicNode.autoplay = true
 	MusicNode.volume_db = -30
-
