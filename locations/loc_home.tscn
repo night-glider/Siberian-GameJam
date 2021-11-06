@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tilesets/forest.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/loc_change_trigger.tscn" type="PackedScene" id=2]
@@ -6,10 +6,12 @@
 [ext_resource path="res://objects/cloud.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tilesets/decorations.tres" type="TileSet" id=5]
 [ext_resource path="res://tilesets/paths.tres" type="TileSet" id=6]
+[ext_resource path="res://objects/weapon_chest.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/dialogue_trigger.tscn" type="PackedScene" id=8]
 
 [node name="loc_home" type="YSort"]
 script = ExtResource( 3 )
-bounding_box = Rect2( 0, 0, 1100, 650 )
+bounding_box = Rect2( 0, 0, 1050, 650 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -47,3 +49,10 @@ tile_data = PoolIntArray( 262169, 0, 0, 393220, 0, 0, 458759, 1, 0, 589843, 1, 0
 
 [node name="Cloud" parent="." instance=ExtResource( 4 )]
 position = Vector2( 730.537, 395.559 )
+
+[node name="weapon_chest" parent="." instance=ExtResource( 7 )]
+position = Vector2( 780.427, 520.285 )
+
+[node name="dialogue_trigger" parent="." instance=ExtResource( 8 )]
+position = Vector2( 281.842, 400.763 )
+dialogue_text = "testttttttttttttt"

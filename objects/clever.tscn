@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/scripts/boots.gd" type="Script" id=1]
+
+[node name="clever" type="Node"]
+script = ExtResource( 1 )
+item_name = "клевер"
+description = "Трехлистный клевер.
+[color=gray]Качество:обычное[/color]
+[color=green]каждую секунду 50% шанс восстановить 1 сердце [/color]"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

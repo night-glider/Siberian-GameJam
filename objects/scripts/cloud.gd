@@ -21,6 +21,8 @@ func _process(delta):
 	
 
 func take_hit(damage):
+	if hp <= 0:
+		return
 	Globals.damage_indicator(position, damage)
 	hp-=damage
 	if hp <= 0:

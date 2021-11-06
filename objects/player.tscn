@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://objects/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
-[ext_resource path="res://objects/gun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/shotgun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/scripts/player_GUI.gd" type="Script" id=4]
 [ext_resource path="res://sprites/heart.png" type="Texture" id=5]
 [ext_resource path="res://objects/boots.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/coin.png" type="Texture" id=7]
+[ext_resource path="res://objects/gun.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/clever.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -48,12 +50,13 @@ radius = 15.0
 "can_be_hit",
 ]]
 script = ExtResource( 1 )
+current_gun = NodePath("gun")
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -63,7 +66,10 @@ shape = SubResource( 7 )
 [node name="stun_timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="gun" parent="." instance=ExtResource( 3 )]
+[node name="gun" parent="." instance=ExtResource( 8 )]
+
+[node name="shotgun" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -142,11 +148,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="dialogue" type="Panel" parent="GUI"]
+visible = false
+anchor_top = 0.7
+anchor_right = 0.45
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/dialogue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="GUI/dialogue"]
+one_shot = true
+
 [node name="items" type="Node" parent="."]
 
 [node name="boots" parent="items" instance=ExtResource( 6 )]
+
+[node name="clever" parent="items" instance=ExtResource( 9 )]
 
 [connection signal="timeout" from="stun_timer" to="." method="_on_stun_timer_timeout"]
 [connection signal="mouse_entered" from="GUI/inventory" to="GUI" method="_on_inventory_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/inventory" to="GUI" method="_on_inventory_mouse_exited"]
 [connection signal="item_selected" from="GUI/inventory/list" to="GUI" method="_on_inventory_list_item_selected"]
+[connection signal="timeout" from="GUI/dialogue/Timer" to="GUI" method="_on_Timer_timeout"]

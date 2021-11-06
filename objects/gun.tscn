@@ -8,6 +8,7 @@ script = ExtResource( 2 )
 cooldown_time = 0.4
 gun_name = "Пистолет"
 description = "Самый обычный пистолет.
+[color=gray]качество:обычное[/color]
 Урон: 1
 [color=green]50% шанс нанести двойной урон. [/color]
 [color=red]0.01% шанс получить оглушение во время стрельбы. [/color]"
