@@ -2,8 +2,11 @@ extends MarginContainer
 
 func _ready():
 	# Music node
-	var music_node = get_node("/root/MusicController").get_node("AmbietMusic")  # Music node
-	music_node.stream = preload("res://audio/HomeMenu.mp3") # Music setter
+	var mainMusicBus = get_node("/root/MusicController").get_node_or_null("AmbientMusicPlayer-main")
+	if (mainMusicBus == null	):
+		print_debug("ERROR IN MUSIC BUS")
+	
+	mainMusicBus.stream = preload("res://audio/MenuMusic.mp3")
 	
 	# Settings window node
 	var settingsBar = get_node("Settings/VBoxContainer3/HBoxContainer/VBoxContainer2/MusicScrollBar")
@@ -16,14 +19,22 @@ func _ready():
 	file.close()
 	
 	# Setting configs from configs.json
+<<<<<<< Updated upstream
 	#settingsBar.value = float(configs["music"])
 	#music_node.volume_db = float(configs["music"]) - 100
+=======
+	settingsBar.value = float(configs["music"])
+	mainMusicBus.volume_db = float(configs["music"]) - 100
+	print_debug(configs)
+	print_debug(mainMusicBus.volume_db)
+	print_debug(mainMusicBus.stream)
+>>>>>>> Stashed changes
 	
 	
 	
 func _on_Start_pressed():
 	print_debug("Game started")
-	var music_node = get_node("/root/MusicController").get_node("AmbietMusic") # Getting Music Node
+	var music_node = get_node("/root/MusicController").get_node("AmbientMusicPlayer-main") # Getting Music Node
 	music_node.volume_db = lerp(int(music_node.volume_db), -80, 0.3) # Music volume decrease
 	# Change Scene script
 	get_tree().change_scene("res://locations/loc_home.tscn")
@@ -40,7 +51,7 @@ func _on_Options_pressed():
 
 func _on_MusicScrollBar_value_changed(value):
 	# Changed Music scrollbar
-	var ambientMusic = get_node("/root/MusicController").get_node("AmbietMusic")
+	var ambientMusic = get_node("/root/MusicController").get_node("AmbientMusicPlayer-main")
 	ambientMusic.volume_db = -80 + value
 	
 

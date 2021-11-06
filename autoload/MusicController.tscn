@@ -1,11 +1,42 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://audio/MenuMusic.mp3" type="AudioStream" id=1]
+[ext_resource path="res://autoload/scripts/musicController.gd" type="Script" id=2]
 
 [node name="MusicController" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AmbietMusic" type="AudioStreamPlayer" parent="."]
+[node name="AmbientMusicPlayer-main" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
 autoplay = true
+
+[node name="AmbientMusicPlayer-separeted" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="Enemie-sound-1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Enemies"
+
+[node name="Enemie-sound-2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Enemies"
+
+[node name="Enemie-sound-3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Enemies"
+
+[node name="Enemie-sound-4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Enemies"
+
+[node name="Enemie-sound-5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "Enemies"
+
+[node name="Master" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
