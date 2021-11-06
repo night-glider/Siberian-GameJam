@@ -10,7 +10,7 @@ var input = Vector2(0,0) #то, куда игрок ХОЧЕТ пойти
 
 var max_hp = 10
 export var hp = 10
-export var coins = 10
+export var coins = 100
 
 export(NodePath) var current_gun
 
@@ -87,6 +87,9 @@ func switch_weapon(weapon:String):
 	current_gun = weapon
 	get_node(current_gun).visible = true
 	inventory_update()
+	
+	$boomerang/cooldown.stop()
+	$boomerang.can_shoot = true
 
 func inventory_update():
 	$GUI/inventory/list.clear()

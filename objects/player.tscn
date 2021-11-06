@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://objects/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://objects/boots.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/coin.png" type="Texture" id=7]
 [ext_resource path="res://objects/gun.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/boomerang.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -55,7 +56,7 @@ current_gun = NodePath("gun")
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "walk"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -69,6 +70,10 @@ one_shot = true
 
 [node name="shotgun" parent="." instance=ExtResource( 3 )]
 visible = false
+
+[node name="boomerang" parent="." instance=ExtResource( 9 )]
+visible = false
+cooldown_time = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

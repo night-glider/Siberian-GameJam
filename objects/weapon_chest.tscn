@@ -33,14 +33,14 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 150.0
+radius = 100.0
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 32.2542, 10 )
 
 [node name="weapon_chest" type="Node2D"]
 script = ExtResource( 2 )
-guns_pool = [ "gun", "shotgun" ]
+guns_pool = [ "gun", "shotgun", "boomerang" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
