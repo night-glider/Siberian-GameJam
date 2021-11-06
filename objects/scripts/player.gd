@@ -9,6 +9,9 @@ var can_control = true #может ли игрок контроллироват�
 var input = Vector2(0,0) #то, куда игрок ХОЧЕТ пойти
 var current_gun
 
+export var hp = 10
+export var coins = 10
+
 func _ready():
 	$Camera2D.limit_left = get_parent().bounding_box.position.x
 	$Camera2D.limit_right = get_parent().bounding_box.end.x
@@ -64,16 +67,6 @@ func _process(delta):
 	
 	if( global_position.x - get_global_mouse_position().x > 0 ):
 		$AnimatedSprite.flip_h = true
-	
-	
-	if Input.is_action_just_pressed("delete_save"):
-		var dir = Directory.new()
-		dir.open("user://")
-		dir.list_dir_begin()
-		var file = dir.get_next()
-		while file != "":
-			dir.remove(file)
-			file = dir.get_next()
 
 
 func _physics_process(delta):
@@ -81,6 +74,8 @@ func _physics_process(delta):
 
 func take_hit(damage:int):
 	Globals.damage_indicator(global_position, damage)
+	hp-=damage
+	$GUI.hp_update()
 
 func stun(duration:float):
 	velocity = Vector2.ZERO
@@ -93,6 +88,9 @@ func stun(duration:float):
 func impulse(direction, force):
 	velocity += Vector2(cos(direction), sin(direction)) * force
 
+func coin_add(count:int):
+	coins+=count
+	$GUI.coin_update()
 
 """
 Сигналы

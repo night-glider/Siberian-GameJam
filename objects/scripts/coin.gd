@@ -11,4 +11,5 @@ func _process(delta):
 	global_position = global_position.move_toward(player.global_position, a)
 	a+=0.2
 	if global_position.distance_to(player.global_position) < 10:
+		player.coin_add(1)
 		queue_free()

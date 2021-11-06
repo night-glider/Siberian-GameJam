@@ -16,3 +16,13 @@ func coin_spawn(center:Vector2, r:float, count:int):
 		var dist = rand_range(0, r)
 		new.global_position.x = center.x + cos(angle)*dist
 		new.global_position.y = center.y + sin(angle)*dist
+
+func _process(delta):
+	if Input.is_action_just_pressed("delete_save"):
+		var dir = Directory.new()
+		dir.open("user://")
+		dir.list_dir_begin()
+		var file = dir.get_next()
+		while file != "":
+			dir.remove(file)
+			file = dir.get_next()
