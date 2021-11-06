@@ -22,6 +22,7 @@ func _ready():
 	
 	inventory_update()
 	$GUI.hp_update()
+	$GUI/dialogue.visible = false
 
 func _process(delta):
 	input = Vector2.ZERO
@@ -105,14 +106,19 @@ func inventory_update():
 	for i in $GUI/inventory/list.get_item_count():
 		$GUI/inventory/list.set_item_tooltip_enabled(i, false)
 
+func spawn_item(item_name:String):
+	var item:Node = load("res://objects/" + item_name + ".tscn").instance()
+	item.name = item_name
+	$items.add_child(item)
+	inventory_update()
+	item.owner = self
+
 func new_dialogue(text:String, duration:int):
 	$GUI/dialogue.visible = true
 	$GUI/dialogue/RichTextLabel.bbcode_text = text
 	$GUI/dialogue/RichTextLabel.percent_visible = 0
 	$GUI/dialogue/Timer.wait_time = duration
 	$GUI/dialogue/Timer.start()
-	
-	$GUI/dialogue.visible = false
 
 func heal(h:int):
 	hp=clamp(hp+h, 0, max_hp)

@@ -6,6 +6,7 @@ func _ready():
 func _on_Start_pressed():
 	print_debug("Game started")
 	# Change Scene script
+	Globals.delete_save()
 	get_tree().change_scene("res://locations/loc_home.tscn")
 
 func _on_Exit_pressed():

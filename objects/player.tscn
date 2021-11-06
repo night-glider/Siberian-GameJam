@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://objects/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://objects/boots.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/coin.png" type="Texture" id=7]
 [ext_resource path="res://objects/gun.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/clever.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -56,7 +55,7 @@ current_gun = NodePath("gun")
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "walk"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -176,8 +175,6 @@ one_shot = true
 [node name="items" type="Node" parent="."]
 
 [node name="boots" parent="items" instance=ExtResource( 6 )]
-
-[node name="clever" parent="items" instance=ExtResource( 9 )]
 
 [connection signal="timeout" from="stun_timer" to="." method="_on_stun_timer_timeout"]
 [connection signal="mouse_entered" from="GUI/inventory" to="GUI" method="_on_inventory_mouse_entered"]

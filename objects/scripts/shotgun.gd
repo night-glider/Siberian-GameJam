@@ -20,9 +20,9 @@ func _process(delta):
 	
 	
 	if abs(rotation) > PI/2:
-		$Sprite.flip_v = true
+		$AnimatedSprite.flip_v = true
 	else:
-		$Sprite.flip_v = false
+		$AnimatedSprite.flip_v = false
 
 func shoot():
 	if can_shoot:
@@ -33,6 +33,7 @@ func shoot():
 			get_parent().impulse(rotation-PI, recoil*5)
 		
 		can_shoot = false
+		$AnimatedSprite.animation = "reload"
 		$cooldown.wait_time = cooldown_time
 		$cooldown.start()
 		
@@ -45,3 +46,4 @@ func shoot():
 
 func _on_cooldown_timeout():
 	can_shoot = true
+	$AnimatedSprite.animation = "idle"
