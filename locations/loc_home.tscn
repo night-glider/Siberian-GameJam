@@ -12,9 +12,7 @@
 
 [node name="loc_home" type="YSort"]
 script = ExtResource( 3 )
-bounding_box = Rect2( 0, 0, 1050, 650 )
-
-[node name="YSort" type="YSort" parent="."]
+bounding_box = Rect2( 0, 0, 1025, 640 )
 
 [node name="loc_change_trigger" parent="." instance=ExtResource( 2 )]
 position = Vector2( -88.7965, 309.354 )
@@ -22,7 +20,7 @@ scale = Vector2( 10, 27.92 )
 location_name = "loc2"
 
 [node name="spawn_point0" type="Node2D" parent="."]
-position = Vector2( 44.25, 315 )
+position = Vector2( 44, 315 )
 rotation = 3.14159
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -54,9 +52,9 @@ position = Vector2( 730.537, 395.559 )
 [node name="weapon_chest" parent="." instance=ExtResource( 7 )]
 position = Vector2( 780.427, 520.285 )
 
-[node name="dialogue_trigger" parent="." instance=ExtResource( 8 )]
-position = Vector2( 281.842, 400.763 )
-dialogue_text = "testttttttttttttt"
-
 [node name="item_chest" parent="." instance=ExtResource( 9 )]
 position = Vector2( 338.924, 529.197 )
+
+[node name="dialogue_trigger" parent="." instance=ExtResource( 8 )]
+position = Vector2( 352.104, 382.587 )
+dialogue_text = "[color=red]this is a test dialogue[/color]"
