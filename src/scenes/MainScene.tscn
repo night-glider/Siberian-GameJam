@@ -28,7 +28,6 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="Menu" type="MarginContainer" parent="."]
-visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_constants/margin_right = 120
@@ -100,6 +99,7 @@ text = "Exit"
 align = 0
 
 [node name="Settings" type="MarginContainer" parent="."]
+visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_constants/margin_right = 120
@@ -120,17 +120,17 @@ size_flags_vertical = 3
 custom_constants/separation = 20
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Settings/VBoxContainer/HBoxContainer"]
-margin_right = 784.0
+margin_right = 382.0
 margin_bottom = 405.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="Resolution" type="VBoxContainer" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2"]
-margin_right = 784.0
+margin_right = 382.0
 margin_bottom = 104.0
 
 [node name="Resolution-Title" type="Label" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2/Resolution"]
-margin_right = 784.0
+margin_right = 382.0
 margin_bottom = 29.0
 theme = ExtResource( 3 )
 custom_fonts/font = ExtResource( 5 )
@@ -141,7 +141,7 @@ __meta__ = {
 
 [node name="Resolution-Select" type="OptionButton" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2/Resolution"]
 margin_top = 33.0
-margin_right = 784.0
+margin_right = 382.0
 margin_bottom = 104.0
 text = "Resolution"
 __meta__ = {
@@ -150,7 +150,7 @@ __meta__ = {
 
 [node name="DevMode-Box" type="CheckBox" parent="Settings/VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_top = 124.0
-margin_right = 784.0
+margin_right = 382.0
 margin_bottom = 195.0
 rect_min_size = Vector2( 300, 0 )
 text = "Developer Mode"
@@ -159,7 +159,6 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings/VBoxContainer/HBoxContainer"]
-visible = false
 margin_left = 402.0
 margin_right = 784.0
 margin_bottom = 405.0
@@ -230,5 +229,4 @@ color = Color( 0.2, 0.2, 0.2, 1 )
 [connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="toggled" from="Settings/VBoxContainer/HBoxContainer/VBoxContainer2/DevMode-Box" to="." method="_on_DevModeBox_toggled"]
-[connection signal="value_changed" from="Settings/VBoxContainer/HBoxContainer/VBoxContainer/MusicControl/MusicVolume-Slider" to="." method="_on_MusicVolumeSlider_value_changed"]
 [connection signal="pressed" from="Settings/VBoxContainer/ExitFromSettings" to="." method="_on_ExitFromSettings_pressed"]
