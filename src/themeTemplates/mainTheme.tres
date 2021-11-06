@@ -1,6 +1,35 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=6 format=2]
 
 [ext_resource path="res://src/Fonts/alagard.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/img/Button-normal.png" type="Texture" id=2]
+[ext_resource path="res://src/img/GuiPatterns_2.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+content_margin_left = 30.0
+content_margin_right = 10.0
+content_margin_top = 25.0
+content_margin_bottom = 17.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 15.7431, 89.123, 222.343, 89.4192 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+content_margin_left = 30.0
+content_margin_right = 10.0
+content_margin_top = 25.0
+content_margin_bottom = 17.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 15.9223, 89.0431, 222.439, 89.6779 )
 
 [resource]
 default_font = ExtResource( 1 )
+Button/colors/font_color = Color( 0.278431, 0.133333, 0, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.278431, 0.133333, 0, 1 )
+Button/colors/font_color_pressed = Color( 0.278431, 0.133333, 0, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 2 )
