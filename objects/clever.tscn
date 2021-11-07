@@ -4,6 +4,10 @@
 
 [node name="clever" type="Node"]
 script = ExtResource( 1 )
+item_name = "клевер"
+description = "трехлистный клевер
+[color=gray]Качество:обычное[/color]
+[color=green]каждую секунду 50% шас восстановить 1 сердечко[/color]"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
