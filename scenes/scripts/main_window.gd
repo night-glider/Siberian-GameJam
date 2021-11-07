@@ -59,12 +59,12 @@ func _on_DevModeBox_toggled(button_pressed):
 	else: 
 		get_node("Background").texture = preload("res://img/RealBg.jpg")
 		get_node("Menu/HBoxContainer/VBoxContainer/GameTitle").text = "I Just want\nto read my\nNewspaper!"
-		get_node("Menu/HBoxContainer/VBoxContainer/VBoxContainer/Start").text = "Start"
-		get_node("Menu/HBoxContainer/VBoxContainer/VBoxContainer/Settings").text = "Settings"
-		get_node("Menu/HBoxContainer/VBoxContainer/VBoxContainer/Exit").text = "Exit"
-		get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer/MusicControl/MusicVolume-Title").text = "Music Volume"
-		get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer/SoundsControl/SoundsVolume-Title").text = "Sound Volume"
-		get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer2/DevMode-Box").text = "Developer Moment"
+		get_node("Menu/HBoxContainer/VBoxContainer/VBoxContainer/Start").text = "Старт"
+		get_node("Menu/HBoxContainer/VBoxContainer/VBoxContainer/Settings").text = "Настройки"
+		get_node("Menu/HBoxContainer/VBoxContainer/VBoxContainer/Exit").text = "Выход"
+		get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer/MusicControl/MusicVolume-Title").text = "Громкость музыки"
+		get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer/SoundsControl/SoundsVolume-Title").text = "Громкость "
+		get_node("Settings/VBoxContainer/HBoxContainer/VBoxContainer2/DevMode-Box").text = "Режим разработчика"
 		get_node("/root/MusicController/Music").stream = preload("res://audio/Home.mp3")
 		get_node("/root/MusicController/Music").autoplay = true
 		get_node("/root/MusicController/Music").playing = true

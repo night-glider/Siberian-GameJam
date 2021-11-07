@@ -89,7 +89,7 @@ current_gun = NodePath("gun")
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "walk"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Sprite" type="Sprite" parent="AnimatedSprite"]
@@ -217,6 +217,7 @@ one_shot = true
 position = Vector2( 50, -50 )
 frames = SubResource( 12 )
 animation = "sad"
+frame = 1
 playing = true
 
 [node name="items" type="Node" parent="."]

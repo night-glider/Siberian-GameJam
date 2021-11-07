@@ -8,7 +8,7 @@
 content_margin_left = 40.0
 content_margin_right = 40.0
 content_margin_top = 20.0
-content_margin_bottom = 20.0
+content_margin_bottom = 10.0
 texture = ExtResource( 2 )
 region_rect = Rect2( 15.83, 89.4181, 224.049, 89.4851 )
 
@@ -16,7 +16,7 @@ region_rect = Rect2( 15.83, 89.4181, 224.049, 89.4851 )
 content_margin_left = 40.0
 content_margin_right = 40.0
 content_margin_top = 20.0
-content_margin_bottom = 20.0
+content_margin_bottom = 10.0
 texture = ExtResource( 3 )
 region_rect = Rect2( 16.2718, 88.6733, 221.93, 89.2018 )
 
@@ -24,7 +24,7 @@ region_rect = Rect2( 16.2718, 88.6733, 221.93, 89.2018 )
 content_margin_left = 40.0
 content_margin_right = 40.0
 content_margin_top = 20.0
-content_margin_bottom = 20.0
+content_margin_bottom = 10.0
 texture = ExtResource( 2 )
 region_rect = Rect2( 16.5375, 89.3912, 221.408, 89.322 )
 
