@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://tilesets/main_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://objects/newspaper_machine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://custom_nodes/location.gd" type="Script" id=3]
-[ext_resource path="res://objects/cloud.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tilesets/decorations.tres" type="TileSet" id=5]
 [ext_resource path="res://tilesets/paths.tres" type="TileSet" id=6]
-[ext_resource path="res://objects/weapon_chest.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/item_chest.tscn" type="PackedScene" id=9]
 
 [node name="loc_home" type="YSort"]
 script = ExtResource( 3 )
@@ -39,85 +37,7 @@ cell_y_sort = true
 show_collision = true
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 42, 7, 0, 59, 7, 0, 66, 1, 0, 65569, 1, 0, 65574, 1, 0, 65577, 6, 0, 65580, 3, 0, 65585, 1, 0, 65592, 3, 0, 65594, 6, 0, 65635, 1, 0, 65647, 0, 0, 131075, 7, 0, 131077, 2, 0, 131085, 0, 0, 131093, 1, 0, 131150, 0, 0, 196659, 7, 0, 262214, 0, 0, 262232, 0, 0, 327689, 0, 0, 327692, 7, 0, 327706, 7, 0, 327711, 1, 0, 327796, 1, 0, 393227, 6, 0, 393230, 3, 0, 393241, 6, 0, 458814, 7, 0, 524293, 7, 0, 524306, 7, 0, 524324, 7, 0, 524336, 1, 0, 524359, 7, 0, 524369, 7, 0, 524376, 1, 0, 524381, 7, 0, 524397, 7, 0, 589892, 3, 0, 589894, 6, 0, 589904, 6, 0, 589907, 3, 0, 589916, 6, 0, 589932, 6, 0, 589934, 3, 0, 655485, 0, 0, 720948, 3, 0, 720970, 7, 0, 720980, 7, 0, 720994, 7, 0, 786444, 1, 0, 917508, 0, 0, 917542, 0, 0, 917548, 1, 0, 917590, 0, 0, 917599, 0, 0, 917611, 1, 0, 983056, 1, 0, 983073, 1, 0, 983098, 1, 0, 1048585, 1, 0, 1048605, 3, 0, 1048649, 1, 0 )
+tile_data = PoolIntArray( 42, 7, 0, 59, 7, 0, 66, 1, 0, 65569, 1, 0, 65574, 1, 0, 65577, 6, 0, 65580, 3, 0, 65585, 1, 0, 65592, 3, 0, 65594, 6, 0, 65635, 1, 0, 65647, 0, 0, 131075, 7, 0, 131077, 2, 0, 131085, 0, 0, 131093, 1, 0, 131150, 0, 0, 196659, 7, 0, 262214, 0, 0, 262232, 0, 0, 327689, 0, 0, 327692, 7, 0, 327706, 7, 0, 327711, 1, 0, 327796, 1, 0, 393227, 6, 0, 393230, 3, 0, 393241, 6, 0, 458814, 7, 0, 524293, 7, 0, 524306, 7, 0, 524324, 7, 0, 524336, 1, 0, 524359, 7, 0, 524369, 7, 0, 524376, 1, 0, 524381, 7, 0, 524397, 7, 0, 589892, 3, 0, 589894, 6, 0, 589904, 6, 0, 589907, 3, 0, 589916, 6, 0, 589932, 6, 0, 589934, 3, 0, 655485, 0, 0, 720948, 3, 0, 720970, 7, 0, 720980, 7, 0, 720994, 7, 0, 786444, 1, 0, 917508, 0, 0, 917542, 0, 0, 917548, 1, 0, 917599, 0, 0, 917611, 1, 0, 983056, 1, 0, 983073, 1, 0, 983098, 1, 0, 1048585, 1, 0, 1048605, 3, 0, 1048649, 1, 0 )
 
-[node name="Cloud5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 931.724, 343.628 )
-
-[node name="Cloud4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 792.099, 479.331 )
-
-[node name="Cloud3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1059.48, 433.346 )
-
-[node name="Cloud2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 717.677, 256.667 )
-
-[node name="Cloud" parent="." instance=ExtResource( 4 )]
-position = Vector2( 851.941, 83.0511 )
-
-[node name="weapon_chest" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1809.85, 325.771 )
-
-[node name="item_chest" parent="." instance=ExtResource( 9 )]
-position = Vector2( 884.643, 522.093 )
-
-[node name="Cloud6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 612.814, 392.853 )
-
-[node name="Cloud7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1346.08, 359.217 )
-
-[node name="Cloud8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1345.8, 192.838 )
-
-[node name="Cloud9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1582.53, 417.585 )
-
-[node name="Cloud10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1733.86, 126.913 )
-
-[node name="Cloud11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1101.57, 162.872 )
-
-[node name="Cloud12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1518.1, 117.923 )
-
-[node name="Cloud13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1918.15, 356.154 )
-
-[node name="Cloud14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2039.51, 98.4451 )
-
-[node name="Cloud15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2117.42, 381.625 )
-
-[node name="Cloud16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2369.14, 119.421 )
-
-[node name="Cloud17" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2480.75, 444.875 )
-
-[node name="Cloud18" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2903.6, 57.3805 )
-
-[node name="Cloud19" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2967.24, 357.194 )
-
-[node name="Cloud20" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3172.3, 470.331 )
-
-[node name="Cloud21" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3419.78, 340.223 )
-
-[node name="Cloud22" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3284.02, 119.606 )
-
-[node name="Cloud23" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3053.5, 180.417 )
-
-[node name="Cloud24" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3743.64, 72.9368 )
-
-[node name="Cloud25" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3739.4, 474.574 )
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3826.51, 369.927 )

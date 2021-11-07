@@ -10,7 +10,7 @@ var input = Vector2(0,0) #то, куда игрок ХОЧЕТ пойти
 
 var max_hp = 10
 export var hp = 10
-export var coins = 100
+export var coins = 20
 
 export(NodePath) var current_gun
 
@@ -22,6 +22,7 @@ func _ready():
 	
 	inventory_update()
 	$GUI.hp_update()
+	$GUI.coin_update()
 	$GUI/dialogue.visible = false
 	get_node(current_gun).visible = true
 	

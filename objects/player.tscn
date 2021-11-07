@@ -51,32 +51,32 @@ animations = [ {
 radius = 15.0
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 12 )
 region = Rect2( 100, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 12 )
 region = Rect2( 200, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 100, 0, 100, 100 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 200, 0, 100, 100 )
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "happy",
-"speed": 10.0
+"name": "sad",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
-"name": "sad",
-"speed": 5.0
+"name": "happy",
+"speed": 10.0
 } ]
 
 [node name="player" type="KinematicBody2D" groups=[
@@ -90,7 +90,6 @@ current_gun = NodePath("gun")
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "walk"
-frame = 3
 playing = true
 
 [node name="Sprite" type="Sprite" parent="AnimatedSprite"]

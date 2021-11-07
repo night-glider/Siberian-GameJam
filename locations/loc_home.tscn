@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilesets/main_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/loc_change_trigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://custom_nodes/location.gd" type="Script" id=3]
-[ext_resource path="res://objects/cloud.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tilesets/decorations.tres" type="TileSet" id=5]
 [ext_resource path="res://tilesets/paths.tres" type="TileSet" id=6]
 [ext_resource path="res://objects/dialogue_trigger.tscn" type="PackedScene" id=8]
@@ -14,8 +13,8 @@ script = ExtResource( 3 )
 bounding_box = Rect2( 0, 0, 1025, 880 )
 
 [node name="loc_change_trigger" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1018.99, 402.282 )
-scale = Vector2( 2.37316, 5.92473 )
+position = Vector2( 1018.99, 358.441 )
+scale = Vector2( 2.37316, 41.4847 )
 location_name = "the_forest"
 
 [node name="spawn_point0" type="Node2D" parent="."]
@@ -47,31 +46,17 @@ centered_textures = true
 format = 1
 tile_data = PoolIntArray( 262172, 11, 0, 458753, 7, 0, 458754, 3, 0, 458760, 8, 0, 458763, 7, 0, 458765, 6, 0, 458771, 7, 0, 458777, 3, 0, 458778, 7, 0, 458779, 6, 0, 458782, 6, 0, 655364, 7, 0, 655370, 5, 0, 655373, 7, 0, 655376, 4, 0, 655383, 7, 0, 655389, 2, 0, 983044, 11, 0 )
 
-[node name="Cloud5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 988.004, 173.484 )
-
-[node name="Cloud4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 691.891, 527.868 )
-
-[node name="Cloud3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 983.247, 519.544 )
-
-[node name="Cloud2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 608.647, 40.2932 )
-
-[node name="Cloud" parent="." instance=ExtResource( 4 )]
-position = Vector2( 891.08, 47.1213 )
-
 [node name="item_chest" parent="." instance=ExtResource( 9 )]
-position = Vector2( 170.372, 666.093 )
+position = Vector2( 359.242, 658.966 )
 
 [node name="dialogue_trigger" parent="." instance=ExtResource( 8 )]
 position = Vector2( 160.666, 270.025 )
 scale = Vector2( 0.652514, 0.294146 )
-dialogue_text = "[color=yellow]Прекрасное доброе утро. Какая ясная погода![/color]"
+dialogue_text = "Прекрасное доброе утро. Какая ясная погода!"
+emotion = "happy"
 
 [node name="dialogue_trigger2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 228.929, 407.499 )
-scale = Vector2( 1.03526, 0.460606 )
-dialogue_text = "[color=blue](Раздраженно)[/color]
-[color=yellow]Все чего я хочу сейчас - прочитать газету![/color]"
+position = Vector2( 506.115, 406.085 )
+scale = Vector2( 1.03526, 8.90061 )
+dialogue_text = "Все чего я хочу сейчас - прочитать [color=yellow][wave amp=10 freq=2]газету![/wave][/color]"
+emotion = "happy"
