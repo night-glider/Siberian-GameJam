@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CityTileSet-Littled.png-ef115bfe105a807d459153515bdf1235.stex"
+path="res://.import/RealBg.jpg-d4b9cf40972c9e410df4f762f6f68e4e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://audio/CityTileSet-Littled.png"
-dest_files=[ "res://.import/CityTileSet-Littled.png-ef115bfe105a807d459153515bdf1235.stex" ]
+source_file="res://img/RealBg.jpg"
+dest_files=[ "res://.import/RealBg.jpg-d4b9cf40972c9e410df4f762f6f68e4e.stex" ]
 
 [params]
 

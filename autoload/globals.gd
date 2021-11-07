@@ -4,6 +4,7 @@ var coin = preload("res://objects/coin.tscn")
 var particle_effect = preload("res://objects/particle_effect.tscn")
 var explosion_effect = preload("res://particles/explosion.tres")
 var secs = 0
+var devmode = false
 
 func damage_indicator(pos:Vector2, damage:int):
 	var new = damg_ind.instance()
