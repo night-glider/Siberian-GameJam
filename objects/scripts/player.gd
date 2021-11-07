@@ -25,8 +25,8 @@ func _ready():
 	$GUI/dialogue.visible = false
 	get_node(current_gun).visible = true
 	
-	get_node("/root/MusicController/Sounds-3").stream = preload("res://audio/Ouch-2.wav")
-	get_node("/root/MusicController/Sounds").stream = preload("res://audio/Walk.wav")
+	#get_node("/root/MusicController/Sounds-3").stream = preload("res://audio/Ouch-2.wav")
+	#get_node("/root/MusicController/Sounds").stream = preload("res://audio/Walk.wav")
 
 func _process(delta):
 	input = Vector2.ZERO
@@ -45,7 +45,7 @@ func _process(delta):
 			get_node("/root/MusicController/Sounds").stream = preload("res://audio/Walk.wav")
 			get_node("/root/MusicController/Sounds").playing = true
 			
-		elif not (Input.is_action_pressed("walk_up") or Input.is_action_pressed("walk_down") or Input.is_action_pressed("walk_right") or Input.is_action_pressed("walk_left")):
+		if not (Input.is_action_pressed("walk_up") or Input.is_action_pressed("walk_down") or Input.is_action_pressed("walk_right") or Input.is_action_pressed("walk_left")):
 			get_node("/root/MusicController/Sounds").playing = false
 		
 		input = input.normalized()
