@@ -11,6 +11,10 @@ export var projectile_speed = 5
 var can_shoot = true
 var target_pos = Vector2.ZERO
 var projectile = preload("res://objects/gun_projectile.tscn")
+
+func _ready():
+	get_node("/root/MusicController/Sounds-2").stream = preload("res://audio/Gun.wav")
+
 func _process(delta):
 	var angle = get_global_mouse_position().angle_to_point(global_position - position)
 	rotation = angle
@@ -43,7 +47,8 @@ func shoot():
 			new_proj.global_position = $shoot_here.global_position
 			new_proj.velocity = Vector2(projectile_speed, 0).rotated(rotation + rand_range(-0.4,0.4))
 			new_proj.damage = 1
-
+		get_node("/root/MusicController/Sounds-2").playing = true
+		
 func _on_cooldown_timeout():
 	can_shoot = true
 	$AnimatedSprite.animation = "idle"

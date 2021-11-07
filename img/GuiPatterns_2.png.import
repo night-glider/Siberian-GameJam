@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-99f556611709b717a30520b089c8f912.stex"
+path="res://.import/GuiPatterns_2.png-c10cd2b8a523d5881110748b021e3494.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/icon.png"
-dest_files=[ "res://.import/icon.png-99f556611709b717a30520b089c8f912.stex" ]
+source_file="res://img/GuiPatterns_2.png"
+dest_files=[ "res://.import/GuiPatterns_2.png-c10cd2b8a523d5881110748b021e3494.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

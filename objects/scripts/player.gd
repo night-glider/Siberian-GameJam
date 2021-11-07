@@ -23,6 +23,9 @@ func _ready():
 	inventory_update()
 	$GUI.hp_update()
 	$GUI/dialogue.visible = false
+	
+	get_node("/root/MusicController/Sounds-3").stream = preload("res://audio/Ouch-2.wav")
+	get_node("/root/MusicController/Sounds").stream = preload("res://audio/Walk.wav")
 
 func _process(delta):
 	input = Vector2.ZERO
@@ -36,8 +39,15 @@ func _process(delta):
 			input.y = 1
 		if Input.is_action_pressed("walk_up"):
 			input.y = -1
-		input = input.normalized()
 		
+		if get_node("/root/MusicController/Sounds").stream != preload("res://audio/Walk.wav") or ((get_node("/root/MusicController/Sounds").stream == preload("res://audio/Walk.wav")) and (get_node("/root/MusicController/Sounds").playing == false) and (Input.is_action_pressed("walk_up") or Input.is_action_pressed("walk_down") or Input.is_action_pressed("walk_right") or Input.is_action_pressed("walk_left"))):
+			get_node("/root/MusicController/Sounds").stream = preload("res://audio/Walk.wav")
+			get_node("/root/MusicController/Sounds").playing = true
+			
+		elif not (Input.is_action_pressed("walk_up") or Input.is_action_pressed("walk_down") or Input.is_action_pressed("walk_right") or Input.is_action_pressed("walk_left")):
+			get_node("/root/MusicController/Sounds").playing = false
+		
+		input = input.normalized()
 		
 		if Input.is_action_pressed("shoot"):
 			get_node(current_gun).shoot()
@@ -45,6 +55,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		stun(1)
+	
+	
 	
 	velocity*=drag
 	
@@ -58,16 +70,21 @@ func _process(delta):
 	
 	if( global_position.x - get_global_mouse_position().x > 0 ):
 		$AnimatedSprite.flip_h = true
-
+	
+	
 func _physics_process(delta):
 	move_and_slide(velocity + input*spd)
 
 func take_hit(damage:int):
+	get_node("/root/MusicController/Sounds-3").playing = true
 	Globals.damage_indicator(global_position, damage)
 	hp-=damage
 	$GUI.hp_update()
 
 func stun(duration:float):
+	get_node("/root/MusicController/Sounds").stream = preload("res://audio/Ouch-2.wav")
+	get_node("/root/MusicController/Sounds").playing = true
+	
 	velocity = Vector2.ZERO
 	can_control = false
 	$stun_timer.wait_time = duration

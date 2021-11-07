@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GuiPatterns_2.png-cd3ae53c95c4140ba1b68ffd3f873d86.stex"
+path="res://.import/CityTileSet-Littled.png-ef115bfe105a807d459153515bdf1235.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/img/GuiPatterns_2.png"
-dest_files=[ "res://.import/GuiPatterns_2.png-cd3ae53c95c4140ba1b68ffd3f873d86.stex" ]
+source_file="res://audio/CityTileSet-Littled.png"
+dest_files=[ "res://.import/CityTileSet-Littled.png-ef115bfe105a807d459153515bdf1235.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

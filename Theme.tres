@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=7 format=2]
+
+[ext_resource path="res://fonts/Button_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://img/GuiPatterns_2.png" type="Texture" id=2]
+[ext_resource path="res://img/Button-normal.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+content_margin_left = 40.0
+content_margin_right = 40.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 15.83, 89.4181, 224.049, 89.4851 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+content_margin_left = 40.0
+content_margin_right = 40.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 16.2718, 88.6733, 221.93, 89.2018 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+content_margin_left = 40.0
+content_margin_right = 40.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource( 2 )
+region_rect = Rect2( 16.5375, 89.3912, 221.408, 89.322 )
+
+[resource]
+Button/colors/font_color = Color( 0.278431, 0.133333, 0, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.278431, 0.133333, 0, 1 )
+Button/colors/font_color_pressed = Color( 0.278431, 0.133333, 0, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 3 )

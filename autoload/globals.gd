@@ -1,6 +1,7 @@
 extends Node
 var damg_ind = preload("res://objects/damage_indicator.tscn")
 var coin = preload("res://objects/coin.tscn")
+var secs = 0
 
 func damage_indicator(pos:Vector2, damage:int):
 	var new = damg_ind.instance()
