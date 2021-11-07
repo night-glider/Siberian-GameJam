@@ -17,6 +17,6 @@ texture = ExtResource( 2 )
 [node name="cooldown" type="Timer" parent="."]
 
 [node name="shoot_here" type="Node2D" parent="."]
-position = Vector2( 62.4828, 0 )
+position = Vector2( 33.1159, 0 )
 
 [connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

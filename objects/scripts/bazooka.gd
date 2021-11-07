@@ -6,7 +6,7 @@ export var cooldown_time = 5
 
 export(String) var gun_name
 export(String, MULTILINE) var description
-export var projectile_speed = 1
+export var projectile_speed = 0.1
 
 var can_shoot = true
 var target_pos = Vector2.ZERO
@@ -44,9 +44,8 @@ func shoot():
 		get_node("/root/MusicController/Sounds-2").playing = true
 		
 		var chance = randf()
-		chance = 10
 		if chance < 0.5:
-			new_proj.damage = 2
+			get_parent().take_hit(2)
 			new_proj.explosion()
 
 func _on_cooldown_timeout():

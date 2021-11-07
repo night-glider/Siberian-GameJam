@@ -92,6 +92,7 @@ func take_hit(damage:int):
 		can_control = false
 		visible = false
 		Globals.death_explosion(global_position)
+		SceneChanger.reset_scene()
 
 func stun(duration:float):
 	get_node("/root/MusicController/Sounds").stream = preload("res://audio/Ouch-2.wav")
