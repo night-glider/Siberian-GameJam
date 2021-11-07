@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tilesets/main_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/loc_change_trigger.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://objects/weapon_chest.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/dialogue_trigger.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/item_chest.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/newspaper_machine.tscn" type="PackedScene" id=10]
 
 [node name="loc_home" type="YSort"]
 script = ExtResource( 3 )
@@ -60,3 +61,6 @@ position = Vector2( 338.924, 529.197 )
 [node name="dialogue_trigger" parent="." instance=ExtResource( 8 )]
 position = Vector2( 352.104, 382.587 )
 dialogue_text = "[color=red]this is a test dialogue[/color]"
+
+[node name="Node2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 898.077, 376.721 )

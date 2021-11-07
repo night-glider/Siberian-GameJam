@@ -40,7 +40,7 @@ extents = Vector2( 32.2542, 10 )
 
 [node name="weapon_chest" type="Node2D"]
 script = ExtResource( 2 )
-guns_pool = [ "gun", "shotgun", "boomerang" ]
+guns_pool = [ "gun", "shotgun", "boomerang", "bazooka" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/scripts/bazooka.gd" type="Script" id=1]
+[ext_resource path="res://sprites/bazooka.png" type="Texture" id=2]
+
+[node name="bazooka" type="Node2D"]
+script = ExtResource( 1 )
+gun_name = "базука"
+description = "Невероятно тяжёлая базука.
+[color=gray]качество:почти необычное[/color]
+Урон:5
+[color=red]0.01% шанс подорвать себя[/color]"
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="cooldown" type="Timer" parent="."]
+
+[node name="shoot_here" type="Node2D" parent="."]
+position = Vector2( 62.4828, 0 )
+
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
