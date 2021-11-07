@@ -76,14 +76,28 @@ func _physics_process(delta):
 	move_and_slide(velocity + input*spd)
 
 func take_hit(damage:int):
-	get_node("/root/MusicController/Sounds-3").playing = true
+	if $items.has_node("plat"):
+		if randf() < 0.2:
+			damage = 0
+		else:
+			damage+=1
+	
+	if Globals.devmode:
+		get_node("/root/MusicController/Sounds-3").playing = true
 	Globals.damage_indicator(global_position, damage)
 	hp-=damage
 	$GUI.hp_update()
+	
+	if hp <= 0:
+		can_control = false
+		visible = false
+		Globals.death_explosion(global_position)
 
 func stun(duration:float):
 	get_node("/root/MusicController/Sounds").stream = preload("res://audio/Ouch-2.wav")
-	get_node("/root/MusicController/Sounds").playing = true
+	
+	if Globals.devmode:
+		get_node("/root/MusicController/Sounds").playing = true
 	
 	velocity = Vector2.ZERO
 	can_control = false

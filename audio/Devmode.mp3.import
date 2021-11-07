@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Devmode.mp3-ddfcb7441f3a273f1d0575f33219410e.mp3str"
+
+[deps]
+
+source_file="res://audio/Devmode.mp3"
+dest_files=[ "res://.import/Devmode.mp3-ddfcb7441f3a273f1d0575f33219410e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
