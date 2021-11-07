@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://objects/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/coin.png" type="Texture" id=7]
 [ext_resource path="res://objects/gun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/boomerang.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sprites/shadow.png" type="Texture" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -57,7 +58,13 @@ current_gun = NodePath("gun")
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "walk"
+frame = 2
 playing = true
+
+[node name="Sprite" type="Sprite" parent="AnimatedSprite"]
+position = Vector2( 0, 15 )
+scale = Vector2( 0.3, 0.5 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 17 )
@@ -126,6 +133,7 @@ __meta__ = {
 margin_right = 64.0
 margin_bottom = 64.0
 texture = ExtResource( 5 )
+expand = true
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false

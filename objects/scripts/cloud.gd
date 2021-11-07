@@ -17,6 +17,8 @@ func _process(delta):
 		return
 	
 	path = nav.get_simple_path(position, player.position)
+	if path.size() < 1:
+		return
 	position = position.move_toward(path[1], 1)
 	
 
@@ -27,6 +29,7 @@ func take_hit(damage):
 	hp-=damage
 	if hp <= 0:
 		Globals.coin_spawn(position, 100, 10)
+		Globals.death_explosion(global_position)
 		queue_free()
 	
 

@@ -40,7 +40,7 @@ extents = Vector2( 32.2542, 10 )
 
 [node name="item_chest" type="Node2D"]
 script = ExtResource( 2 )
-item_pool = [ "boots", "clever" ]
+item_pool = [ "boots", "clever", "plat" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )

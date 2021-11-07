@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/scripts/plat.gd" type="Script" id=1]
+
+[node name="plat" type="Node"]
+script = ExtResource( 1 )
+item_name = "платок"
+description = "разорванный платок
+[color=gray]качество:обычное[/color]
+[color=green]60% шанс не получить урон[/color]
+[color=red]40% шанс получить +1 урон[/color]"
