@@ -49,6 +49,7 @@ radius = 15.0
 [node name="player" type="KinematicBody2D" groups=[
 "can_be_hit",
 ]]
+position = Vector2( 0, -32 )
 script = ExtResource( 1 )
 current_gun = NodePath("gun")
 
@@ -56,7 +57,6 @@ current_gun = NodePath("gun")
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
 animation = "walk"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -73,7 +73,6 @@ visible = false
 
 [node name="boomerang" parent="." instance=ExtResource( 9 )]
 visible = false
-cooldown_time = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -135,7 +134,7 @@ __meta__ = {
 [node name="coin" type="TextureRect" parent="GUI"]
 anchor_top = 0.1
 anchor_bottom = 0.1
-rect_scale = Vector2( 3, 3 )
+rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -144,9 +143,8 @@ __meta__ = {
 [node name="coins_label" type="Label" parent="GUI"]
 anchor_top = 0.1
 anchor_bottom = 0.1
-margin_left = 50.0
+margin_left = 35.0
 margin_top = 10.0
-rect_scale = Vector2( 2, 2 )
 text = "x10"
 __meta__ = {
 "_edit_use_anchors_": false

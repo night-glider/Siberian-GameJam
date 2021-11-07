@@ -15,8 +15,8 @@ func _process(delta):
 	if $dialogue.visible:
 		$dialogue/RichTextLabel.percent_visible+=0.01
 	
-	$coin.rect_scale = lerp($coin.rect_scale, Vector2(3,3), 0.1)
-	$coins_label.rect_scale = lerp($coins_label.rect_scale, Vector2(2,2), 0.1)
+	$coin.rect_scale = lerp($coin.rect_scale, Vector2(2,2), 0.1)
+	$coins_label.rect_scale = lerp($coins_label.rect_scale, Vector2(1,1), 0.1)
 
 func coin_update():
 	$coin.rect_scale*=1.1
