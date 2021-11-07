@@ -2,7 +2,7 @@ extends Node2D
 
 export var radius = 25
 export var recoil = 1000
-export var cooldown_time = 1
+export(float) var cooldown_time = 1
 
 export(String) var gun_name
 export(String, MULTILINE) var description
@@ -41,11 +41,11 @@ func shoot():
 		$cooldown.wait_time = cooldown_time
 		$cooldown.start()
 		
-		for i in 10:
+		for i in 7:
 			var new_proj = projectile.instance()
 			get_tree().current_scene.add_child(new_proj)
 			new_proj.global_position = $shoot_here.global_position
-			new_proj.velocity = Vector2(projectile_speed, 0).rotated(rotation + rand_range(-0.4,0.4))
+			new_proj.velocity = Vector2(projectile_speed, 0).rotated(rotation + rand_range(-0.7,0.7))
 			new_proj.damage = 1
 		get_node("/root/MusicController/Sounds-2").playing = true
 		

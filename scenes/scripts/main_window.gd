@@ -14,7 +14,6 @@ func _ready():
 func _on_Start_pressed():
 	get_node("/root/MusicController/Music").stream = preload("res://audio/Forest.mp3")
 	get_node("/root/MusicController/Music").playing = true
-	Globals.delete_save()
 	get_tree().change_scene("res://locations/loc_home.tscn")
 
 func _on_Exit_pressed():
@@ -70,3 +69,7 @@ func _on_DevModeBox_toggled(button_pressed):
 		get_node("/root/MusicController/Music").autoplay = true
 		get_node("/root/MusicController/Music").playing = true
 		Globals.devmode = false
+
+
+func _on_DeleteProgress_pressed():
+	Globals.delete_save()

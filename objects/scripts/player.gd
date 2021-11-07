@@ -23,6 +23,7 @@ func _ready():
 	inventory_update()
 	$GUI.hp_update()
 	$GUI/dialogue.visible = false
+	get_node(current_gun).visible = true
 	
 	get_node("/root/MusicController/Sounds-3").stream = preload("res://audio/Ouch-2.wav")
 	get_node("/root/MusicController/Sounds").stream = preload("res://audio/Walk.wav")
@@ -70,8 +71,7 @@ func _process(delta):
 	
 	if( global_position.x - get_global_mouse_position().x > 0 ):
 		$AnimatedSprite.flip_h = true
-	
-	
+
 func _physics_process(delta):
 	move_and_slide(velocity + input*spd)
 
@@ -147,8 +147,9 @@ func spawn_item(item_name:String):
 	inventory_update()
 	item.owner = self
 
-func new_dialogue(text:String, duration:int):
+func new_dialogue(text:String, duration:int, emotion:String):
 	$GUI/dialogue.visible = true
+	$GUI/dialogue/AnimatedSprite.animation = emotion
 	$GUI/dialogue/RichTextLabel.bbcode_text = text
 	$GUI/dialogue/RichTextLabel.percent_visible = 0
 	$GUI/dialogue/Timer.wait_time = duration

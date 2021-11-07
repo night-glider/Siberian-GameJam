@@ -4,7 +4,7 @@ extends CanvasLayer
 var descs = []
 var names = []
 var inventory_active = false
-
+var n = -99999
 
 func _process(delta):
 	if inventory_active:
@@ -17,6 +17,9 @@ func _process(delta):
 	
 	$coin.rect_scale = lerp($coin.rect_scale, Vector2(2,2), 0.1)
 	$coins_label.rect_scale = lerp($coins_label.rect_scale, Vector2(1,1), 0.1)
+	
+	$dialogue/AnimatedSprite.rotation_degrees = sin(n) * 10
+	n+=PI/180
 
 func coin_update():
 	$coin.rect_scale*=1.1

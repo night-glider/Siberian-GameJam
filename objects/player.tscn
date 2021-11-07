@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://objects/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://objects/gun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/boomerang.tscn" type="PackedScene" id=9]
 [ext_resource path="res://sprites/shadow.png" type="Texture" id=10]
+[ext_resource path="res://sprites/talk_happy.png" type="Texture" id=11]
+[ext_resource path="res://sprites/talk_sad.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -17,35 +19,64 @@ region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 5 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 10.0
 } ]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 15.0
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 11 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 11 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 12 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 12 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "happy",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "sad",
+"speed": 5.0
+} ]
 
 [node name="player" type="KinematicBody2D" groups=[
 "can_be_hit",
@@ -159,8 +190,7 @@ __meta__ = {
 }
 
 [node name="dialogue" type="Panel" parent="GUI"]
-visible = false
-anchor_top = 0.7
+anchor_top = 0.75
 anchor_right = 0.45
 anchor_bottom = 1.0
 __meta__ = {
@@ -182,6 +212,13 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="GUI/dialogue"]
 one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="GUI/dialogue"]
+position = Vector2( 50, -50 )
+frames = SubResource( 10 )
+animation = "sad"
+frame = 1
+playing = true
 
 [node name="items" type="Node" parent="."]
 

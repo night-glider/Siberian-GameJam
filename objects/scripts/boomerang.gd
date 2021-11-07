@@ -11,13 +11,13 @@ export var projectile_speed = 15
 var can_shoot = true
 var target_pos = Vector2.ZERO
 var projectile = preload("res://objects/boomerang_projectile.tscn")
+
 func _process(delta):
 	var angle = get_global_mouse_position().angle_to_point(global_position - position)
 	rotation = angle
 	target_pos.x = cos(angle) * radius
 	target_pos.y = sin(angle) * radius
 	position = lerp(position, target_pos, 0.1)
-	
 
 func shoot():
 	if can_shoot:

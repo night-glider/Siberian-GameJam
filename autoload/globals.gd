@@ -3,6 +3,7 @@ var damg_ind = preload("res://objects/damage_indicator.tscn")
 var coin = preload("res://objects/coin.tscn")
 var particle_effect = preload("res://objects/particle_effect.tscn")
 var explosion_effect = preload("res://particles/explosion.tres")
+var proj_explosion_effect = preload("res://particles/projectile_explosion.tres")
 var secs = 0
 var devmode = false
 
@@ -33,7 +34,13 @@ func delete_save():
 func death_explosion(pos:Vector2):
 	var new = particle_effect.instance()
 	get_tree().current_scene.add_child(new)
-	new.init(pos, explosion_effect, 20, 1)
+	new.init(pos, 0, explosion_effect, 10, 1)
+	
+
+func projectile_explosion(pos:Vector2, angle:float):
+	var new = particle_effect.instance()
+	get_tree().current_scene.add_child(new)
+	new.init(pos, angle, proj_explosion_effect, 20, 0.4)
 
 func _process(delta):
 	if Input.is_action_just_pressed("delete_save"):

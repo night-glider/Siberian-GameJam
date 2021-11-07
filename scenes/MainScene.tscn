@@ -233,6 +233,7 @@ theme = ExtResource( 3 )
 text = "Back To Menu"
 
 [connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/VBoxContainer/DeleteProgress" to="." method="_on_DeleteProgress_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="toggled" from="Settings/VBoxContainer/HBoxContainer/VBoxContainer2/DevMode-Box" to="." method="_on_DevModeBox_toggled"]
