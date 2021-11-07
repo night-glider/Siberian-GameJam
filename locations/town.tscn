@@ -1,16 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilesets/main_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://objects/cloud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://custom_nodes/location.gd" type="Script" id=3]
+[ext_resource path="res://objects/loc_change_trigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tilesets/decorations.tres" type="TileSet" id=5]
 [ext_resource path="res://tilesets/paths.tres" type="TileSet" id=6]
+[ext_resource path="res://objects/weapon_chest.tscn" type="PackedScene" id=7]
 
 [node name="loc_home" type="YSort"]
 script = ExtResource( 3 )
 bounding_box = Rect2( 0, 0, 1525, 880 )
 
 [node name="spawn_point0" type="Node2D" parent="."]
-position = Vector2( 161.599, 269.564 )
+position = Vector2( 29.7306, 350.944 )
 rotation = 3.14159
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -37,3 +40,20 @@ show_collision = true
 centered_textures = true
 format = 1
 tile_data = PoolIntArray( 12, 6, 0, 22, 6, 0, 196640, 11, 0, 458760, 8, 0, 655361, 7, 0, 786441, 7, 0, 851995, 2, 0, 1048589, 4, 0, 1048593, 7, 0, 1048601, 7, 0, 1179680, 7, 0, 1179685, 7, 0, 1310731, 11, 0 )
+
+[node name="Cloud" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1294.98, 632.354 )
+
+[node name="Cloud2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 835.851, 304.405 )
+
+[node name="Cloud3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 893.032, 43.7267 )
+
+[node name="loc_change_trigger" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1588.2, 404.665 )
+scale = Vector2( 13.6114, 45.1667 )
+location_name = "end_location"
+
+[node name="weapon_chest" parent="." instance=ExtResource( 7 )]
+position = Vector2( 711.641, 651.028 )

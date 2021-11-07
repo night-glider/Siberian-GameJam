@@ -11,7 +11,7 @@ var projectile = preload("res://objects/gun_projectile.tscn")
 
 func _ready():
 	nav = get_parent().get_node("Navigation2D")
-	$Timer.wait_time = rand_range(3,6)
+	$Timer.wait_time = rand_range(1,2)
 	$Timer.start()
 
 

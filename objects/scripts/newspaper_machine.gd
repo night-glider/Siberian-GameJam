@@ -1,9 +1,10 @@
 extends Node2D
 
 export var stage = 0
+var enemy = preload("res://objects/cloud_static.tscn")
 
 func _ready():
-	if stage == 1:
+	if stage >= 1:
 		$AnimatedSprite.animation = "broken"
 
 func _on_Area2D_body_entered(body):
@@ -12,15 +13,22 @@ func _on_Area2D_body_entered(body):
 		$Panel.visible = true
 		stage = 1
 	if body.name == "player" and $AnimatedSprite.animation == "broken":
+		stage = 10
 		body.new_dialogue("Серьёзно??? Его уже успели сломать? Похоже придётся идти [color=yellow]домой[/color]", 10, "sad")
 
 
 func _on_Area2D_body_exited(body):
 	if body.name == "player":
 		$Panel.visible = false
+		
 
 
 
 func _on_Area2D2_body_exited(body):
 	if body.name == "player" and stage == 1:
 		$AnimatedSprite.animation = "broken"
+		var new = enemy.instance()
+		get_parent().add_child(new)
+		new.global_position = Vector2(300,250)
+		stage = 2
+

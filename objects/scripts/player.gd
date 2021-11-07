@@ -10,7 +10,7 @@ var input = Vector2(0,0) #то, куда игрок ХОЧЕТ пойти
 
 var max_hp = 10
 export var hp = 10
-export var coins = 20
+export var coins = 30
 
 export(NodePath) var current_gun
 
